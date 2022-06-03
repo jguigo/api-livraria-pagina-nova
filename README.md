@@ -1,3 +1,3 @@
-# Livraria Página nova
+# Livraria Página Nova
 
-## Projeto com intuido de praticar migration
+## Projeto com intuito de praticar migration
