@@ -1,7 +1,9 @@
 'use strict';
+
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Books', {
+  async up (queryInterface, Sequelize) {
+
+    await queryInterface.createTable('Books', { 
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -14,13 +16,13 @@ module.exports = {
       edition_year: {
         type: Sequelize.INTEGER
       },
-      author: {
+      author:{
         type: Sequelize.STRING
       },
       pages: {
         type: Sequelize.INTEGER
       },
-      stock: {
+      stock:{
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -32,8 +34,12 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+
   },
-  async down(queryInterface, Sequelize) {
+
+  async down (queryInterface, Sequelize) {
+   
     await queryInterface.dropTable('Books');
+     
   }
 };
