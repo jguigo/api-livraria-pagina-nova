@@ -1,13 +1,20 @@
 const { Books } = require("../database/models/index");
+const cloudinary = require('../config/clouldinary')
 
 const imageFolder = "image/";
 
 const BookController = {
    async create(req, res) {
       const file = req.files[0];
+      const uploadPath = await cloudinary.uploads(file.path, 'livraria')
+      console.log(uploadPath);
       const newBook = await Books.create({
          ...req.body,
-         image: imageFolder + file.filename,
+
+         // forma de upload na aplicação! ruim
+         // image: imageFolder + file.filename,
+
+         image: uploadPath.imageUrl
       });
       console.log(req.files);
       return res.status(201).json(newBook);
