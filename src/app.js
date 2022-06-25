@@ -10,7 +10,7 @@ db.hasConection();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(upload.any());
-app.use(express.static('src/public/images'));
+app.use(express.static('src/public/'));
 
 app.use(routes);
 
