@@ -14,4 +14,5 @@ app.use(express.static('src/public/'));
 
 app.use(routes);
 
-app.listen(3333, () => console.log("Serve on at Port 3333!"));
+const port = process.env.PORT || 4500
+app.listen(port, () => console.log(`Serve on at Port ${port}!`));
